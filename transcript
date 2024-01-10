@@ -1,0 +1,25 @@
+# ERROR: No extended dataflow license exists
+# vsim -do {run -all} RISC_V_TB 
+# Loading work.RISC_V_TB
+# Loading work.RISCV_TOP
+# Loading work.FETCH_STAGE
+# Loading work.Mux
+# Loading work.PC_INC_4
+# Loading work.PC_REG
+# Loading work.INST_MEM
+# Loading work.IF_ID_PR
+# Loading work.DECODE_STAGE
+# Loading work.CTRL_UNIT
+# Loading work.Reg_file
+# Loading work.Imm_gen
+# Loading work.ID_IE_PR
+# Loading work.EXCUTE_STAGE
+# Loading work.ALU
+# Loading work.Branch_circuit
+# Loading work.PC_target_adder
+# Loading work.MUX_4
+# Loading work.IE_IM_PR
+# Loading work.Data_MEM
+# Loading work.IM_IW_PR
+# Loading work.Hazard_Unit
+# run -all 
