@@ -1,4 +1,4 @@
-# vsim -do MUL_Transscript.do MUL_Top 
+# vsim -do Mul_Top_Wave.do MUL_Top 
 # Loading work.MUL_Top
 # Loading work.CTRL_UNIT_MUL
 # Loading work.Mul_Core_CTRL
@@ -8,18 +8,18 @@
 # Loading work.left_Shifter
 # Loading work.N_bit_MUX
 # Loading work.Two_sComp
+# Loading work.VariableLeftShifter
 # Loading work.Adder
 # Loading work.Right_Shifter
 # Loading work.Var_Shift_Reg
-# do MUL_Transscript.do 
-do Mul_Top_Wave_Initial.do
+# Loading work.AdderPlusBias
+# do Mul_Top_Wave.do 
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: Yousef Esmail  Hostname: DESKTOP-QRM7U7B  ProcessID: 9448
 # 
-#           Attempting to use alternate WLF file "./wlft331gze".
+#           Attempting to use alternate WLF file "./wlftw36neq".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft331gze
+#           Using alternate file: ./wlftw36neq
 # 
-do MUL_Transscript.do

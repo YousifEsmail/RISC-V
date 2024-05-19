@@ -112,6 +112,13 @@ add wave -noupdate -expand -group Core1_VarShifter /MUL_Top/u_core_1_Var_Shift_R
 add wave -noupdate -expand -group Core1_VarShifter -radix decimal /MUL_Top/u_core_1_Var_Shift_Reg/Out_Reg
 add wave -noupdate -group Core1_Right_Shifter /MUL_Top/u_core_1_Right_Shifter/In
 add wave -noupdate -group Core1_Right_Shifter /MUL_Top/u_core_1_Right_Shifter/out
+add wave -noupdate -group VarLeftShifterCore1 /MUL_Top/u_VariableLeftShifter/clk
+add wave -noupdate -group VarLeftShifterCore1 /MUL_Top/u_VariableLeftShifter/rst
+add wave -noupdate -group VarLeftShifterCore1 /MUL_Top/u_VariableLeftShifter/Enable
+add wave -noupdate -group VarLeftShifterCore1 /MUL_Top/u_VariableLeftShifter/I_SoftRst
+add wave -noupdate -group VarLeftShifterCore1 /MUL_Top/u_VariableLeftShifter/I_Data
+add wave -noupdate -group VarLeftShifterCore1 /MUL_Top/u_VariableLeftShifter/CounterReg
+add wave -noupdate -group VarLeftShifterCore1 /MUL_Top/u_VariableLeftShifter/O_Data
 add wave -noupdate -group Core1_Adder /MUL_Top/u_core_1_Adder/I_IN1
 add wave -noupdate -group Core1_Adder /MUL_Top/u_core_1_Adder/I_IN2
 add wave -noupdate -group Core1_Adder /MUL_Top/u_core_1_Adder/clk
@@ -176,9 +183,8 @@ configure wave -timeline 0
 configure wave -timelineunits ps
 update
 WaveRestoreZoom {0 ps} {3552 ps}
-
-force -freeze sim:/MUL_Top/A 111101110111101000110100000110 0
-force -freeze sim:/MUL_Top/B 10011001000100011111000110110101 0
+force -freeze sim:/MUL_Top/A 11001100110001101010111101111111 0
+force -freeze sim:/MUL_Top/B 10000001100111001111001000110000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -207,8 +213,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10000000100010001110000111001011 0
-force -freeze sim:/MUL_Top/B 1011100110110111001101011011111 0
+force -freeze sim:/MUL_Top/A 11011111010100000101101100001011 0
+force -freeze sim:/MUL_Top/B 11101011001001111001010000111110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -237,8 +243,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10001011001111000100011101010110 0
-force -freeze sim:/MUL_Top/B 10001010000001010100111101001110 0
+force -freeze sim:/MUL_Top/A 10000011100010100000001001111010 0
+force -freeze sim:/MUL_Top/B 11010010110011000110011101111011 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -267,8 +273,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10111110010011001110001111111110 0
-force -freeze sim:/MUL_Top/B 111110110001000111101111000100 0
+force -freeze sim:/MUL_Top/A 11000100100010111111101110100001 0
+force -freeze sim:/MUL_Top/B 1100110011110111110001000111000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -297,8 +303,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10010001011000010111000100000011 0
-force -freeze sim:/MUL_Top/B 10111001110011101101110110100010 0
+force -freeze sim:/MUL_Top/A 11100000011001001110000100011000 0
+force -freeze sim:/MUL_Top/B 10010111000100111111000110010100 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -327,8 +333,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 110000011100100011101011010100 0
-force -freeze sim:/MUL_Top/B 110011001100100011010100010110 0
+force -freeze sim:/MUL_Top/A 11001101110011000001110101110000 0
+force -freeze sim:/MUL_Top/B 11010100010111010111100101001011 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -357,8 +363,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1110011000000101100101100000001 0
-force -freeze sim:/MUL_Top/B 10011010000000010111110011010100 0
+force -freeze sim:/MUL_Top/A 10111111110110001010011101011111 0
+force -freeze sim:/MUL_Top/B 10010000101110011001101101110000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -387,8 +393,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10000100111000001101011011011000 0
-force -freeze sim:/MUL_Top/B 10100001001111101111101010010111 0
+force -freeze sim:/MUL_Top/A 1110011001101001000010100101111 0
+force -freeze sim:/MUL_Top/B 101000110010101000101111100010 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -417,8 +423,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11110000001111001111100100010110 0
-force -freeze sim:/MUL_Top/B 1110000001110100111100011101101 0
+force -freeze sim:/MUL_Top/A 1111111110101010010110011010001 0
+force -freeze sim:/MUL_Top/B 10011111100000100010000000011100 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -447,8 +453,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1101110111000011001101100110000 0
-force -freeze sim:/MUL_Top/B 100010110110111011101111111111 0
+force -freeze sim:/MUL_Top/A 1100010001101101110100011110001 0
+force -freeze sim:/MUL_Top/B 10000010100101000110101111011010 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -477,8 +483,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11001111110101011101011111000100 0
-force -freeze sim:/MUL_Top/B 11001111011110011000011010101010 0
+force -freeze sim:/MUL_Top/A 1000111010010101000100000111111 0
+force -freeze sim:/MUL_Top/B 1000000010000001001111111001 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -507,8 +513,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10001101100100001000011010010110 0
-force -freeze sim:/MUL_Top/B 10010011001111010001110010110011 0
+force -freeze sim:/MUL_Top/A 1111101100001100010000101001111 0
+force -freeze sim:/MUL_Top/B 101100111101000101000100001000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -537,8 +543,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10111110111001000101001111110100 0
-force -freeze sim:/MUL_Top/B 10011100010010101101101000010 0
+force -freeze sim:/MUL_Top/A 111010111001110011101001010010 0
+force -freeze sim:/MUL_Top/B 100011000000001111101001011101 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -567,8 +573,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10001011000000000001000100001100 0
-force -freeze sim:/MUL_Top/B 10101011101101000100001101110101 0
+force -freeze sim:/MUL_Top/A 101100110010011000101010010101 0
+force -freeze sim:/MUL_Top/B 10110001000100001011101100100011 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -597,8 +603,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1101000111001101011010100111101 0
-force -freeze sim:/MUL_Top/B 10011111100011010111010010001001 0
+force -freeze sim:/MUL_Top/A 10001000001010001110001100111101 0
+force -freeze sim:/MUL_Top/B 1110001011110011111001111110010 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -627,8 +633,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10001101100011111001101010101101 0
-force -freeze sim:/MUL_Top/B 11000100100010000111100101001001 0
+force -freeze sim:/MUL_Top/A 11101100000000000000111010011100 0
+force -freeze sim:/MUL_Top/B 10010010011100111011111100110110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -657,8 +663,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1111000110101111011000111000000 0
-force -freeze sim:/MUL_Top/B 10101110111101100111000010000100 0
+force -freeze sim:/MUL_Top/A 1101100101010011010000111110111 0
+force -freeze sim:/MUL_Top/B 10001110011101100001110111101010 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -687,8 +693,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11101010111000111101111010001110 0
-force -freeze sim:/MUL_Top/B 11110111111101101011110001010111 0
+force -freeze sim:/MUL_Top/A 110110010010010110010010101101 0
+force -freeze sim:/MUL_Top/B 1010100110100100101000110010101 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -717,8 +723,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1010100001101111001111111010 0
-force -freeze sim:/MUL_Top/B 11100010010000000110011010100110 0
+force -freeze sim:/MUL_Top/A 11001101010110101000110010101000 0
+force -freeze sim:/MUL_Top/B 110000110001010001111101000111 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -747,8 +753,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10111010001010101000110110001010 0
-force -freeze sim:/MUL_Top/B 110000000000001001101100011010 0
+force -freeze sim:/MUL_Top/A 100011110100100011110000001010 0
+force -freeze sim:/MUL_Top/B 10001010101010100010010010001110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -777,8 +783,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1100100111000110010010111111011 0
-force -freeze sim:/MUL_Top/B 10111111000101101000011111111111 0
+force -freeze sim:/MUL_Top/A 11100010101100100001001101011001 0
+force -freeze sim:/MUL_Top/B 10101000010101001110110101110011 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -807,8 +813,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10110101100011101000010111111 0
-force -freeze sim:/MUL_Top/B 101000100010101010110000001000 0
+force -freeze sim:/MUL_Top/A 101000111111100111001111011101 0
+force -freeze sim:/MUL_Top/B 1111111000010001010001110000011 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -837,8 +843,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1110010011111100111010001110 0
-force -freeze sim:/MUL_Top/B 1011110111010001001010101110010 0
+force -freeze sim:/MUL_Top/A 1001101001010001110111010100001 0
+force -freeze sim:/MUL_Top/B 101000011101100111011100111000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -867,8 +873,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1010100101000011011111101011101 0
-force -freeze sim:/MUL_Top/B 11111011100111110001011001111001 0
+force -freeze sim:/MUL_Top/A 1110110010000011101011011001001 0
+force -freeze sim:/MUL_Top/B 10011000010100110010010100000100 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -897,8 +903,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10011000100000100000101110010011 0
-force -freeze sim:/MUL_Top/B 11100101011011111110001100101011 0
+force -freeze sim:/MUL_Top/A 1001111000110010000011000100101 0
+force -freeze sim:/MUL_Top/B 11000101001000101001000000101111 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -927,8 +933,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11101010110011100100111001000110 0
-force -freeze sim:/MUL_Top/B 1000101101011000100010001001101 0
+force -freeze sim:/MUL_Top/A 101100010111011101101000001 0
+force -freeze sim:/MUL_Top/B 10101110000010001110010100000001 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -957,8 +963,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10010000010101101001110110001101 0
-force -freeze sim:/MUL_Top/B 10001100111100000000101000001110 0
+force -freeze sim:/MUL_Top/A 110111000101010001001110011001 0
+force -freeze sim:/MUL_Top/B 1111001001011001110100111011110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -987,8 +993,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10010101111000010100111000000000 0
-force -freeze sim:/MUL_Top/B 1110011101000101111100010110101 0
+force -freeze sim:/MUL_Top/A 100110111110010100100011011011 0
+force -freeze sim:/MUL_Top/B 10000011111101100000100100101101 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1017,8 +1023,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 100110000001110010000110110010 0
-force -freeze sim:/MUL_Top/B 11011100100011000111011001110010 0
+force -freeze sim:/MUL_Top/A 1111010001111101010101111100 0
+force -freeze sim:/MUL_Top/B 1111001001101010110101101110100 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1047,8 +1053,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10111101001010000011011011111001 0
-force -freeze sim:/MUL_Top/B 1111011111000001011100000100011 0
+force -freeze sim:/MUL_Top/A 11111110101000110000101101011100 0
+force -freeze sim:/MUL_Top/B 10110000001110011101100010010010 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1077,8 +1083,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1011000000111011100011010110000 0
-force -freeze sim:/MUL_Top/B 11001111001101101100111000000100 0
+force -freeze sim:/MUL_Top/A 111010001000101010010000101000 0
+force -freeze sim:/MUL_Top/B 100000000010100011010100010000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1107,8 +1113,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11001000111000111001000110101101 0
-force -freeze sim:/MUL_Top/B 1110001001111110100000011001001 0
+force -freeze sim:/MUL_Top/A 11111000001011111000101001101010 0
+force -freeze sim:/MUL_Top/B 1011101110111001110001001011000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1137,8 +1143,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1111011111101001111011000101100 0
-force -freeze sim:/MUL_Top/B 1100101100100111010001110011001 0
+force -freeze sim:/MUL_Top/A 10100011101010010000101110010111 0
+force -freeze sim:/MUL_Top/B 1001001100001110011000110110101 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1167,8 +1173,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10000110000011111010110001101111 0
-force -freeze sim:/MUL_Top/B 11110001000000001001011110001101 0
+force -freeze sim:/MUL_Top/A 10001111011110101111100001110111 0
+force -freeze sim:/MUL_Top/B 1111001001000101000100100110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1197,8 +1203,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1011110000000101000011110111100 0
-force -freeze sim:/MUL_Top/B 110101000101011101001011101000 0
+force -freeze sim:/MUL_Top/A 10011100000000100110100001010100 0
+force -freeze sim:/MUL_Top/B 101000001000011100010010010001 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1227,8 +1233,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11101001010100110010011111111101 0
-force -freeze sim:/MUL_Top/B 110000111101000011111010101100 0
+force -freeze sim:/MUL_Top/A 1000011100101000100110110101001 0
+force -freeze sim:/MUL_Top/B 1111011111011101000010000101001 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1257,8 +1263,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10101100101101000001111110101000 0
-force -freeze sim:/MUL_Top/B 11101100101000111000000011101111 0
+force -freeze sim:/MUL_Top/A 10010010001011001001011101100001 0
+force -freeze sim:/MUL_Top/B 11100000000010100010010100111 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1287,8 +1293,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11010000110011000011100101001010 0
-force -freeze sim:/MUL_Top/B 11100001001101101111111100011 0
+force -freeze sim:/MUL_Top/A 111010011000001001000110101000 0
+force -freeze sim:/MUL_Top/B 10010011011101000001111101101001 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1317,8 +1323,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1110111101010101110011111100110 0
-force -freeze sim:/MUL_Top/B 101001100111010100110000111001 0
+force -freeze sim:/MUL_Top/A 1011100010000101111011001000011 0
+force -freeze sim:/MUL_Top/B 10110010000011010010011000110111 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1347,8 +1353,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1101111001001101100110111101100 0
-force -freeze sim:/MUL_Top/B 11101111000100000010000000100011 0
+force -freeze sim:/MUL_Top/A 1100110100001100101111111000100 0
+force -freeze sim:/MUL_Top/B 11000110000111010001001100110101 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1377,8 +1383,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10001100101111111011010011011110 0
-force -freeze sim:/MUL_Top/B 10101000111110000111000101010111 0
+force -freeze sim:/MUL_Top/A 10000101010101010110010101000111 0
+force -freeze sim:/MUL_Top/B 1110101000010010010000000011010 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1407,8 +1413,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10011101010101101010010011010011 0
-force -freeze sim:/MUL_Top/B 11100110001101010010001111011110 0
+force -freeze sim:/MUL_Top/A 11110010101110000100011100011110 0
+force -freeze sim:/MUL_Top/B 11001110100111001111110000101 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1437,8 +1443,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 11001110001001101100101001101011 0
-force -freeze sim:/MUL_Top/B 100001100101011111010011000001 0
+force -freeze sim:/MUL_Top/A 1011000010110111111001111000 0
+force -freeze sim:/MUL_Top/B 1011001001011000100101000110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1467,8 +1473,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 101001100101010110001101011111 0
-force -freeze sim:/MUL_Top/B 10111010000110101100111100110111 0
+force -freeze sim:/MUL_Top/A 100000000101101010000100010001 0
+force -freeze sim:/MUL_Top/B 10101001011001100000101011100010 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1497,8 +1503,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1001101001101010011010010100001 0
-force -freeze sim:/MUL_Top/B 100101111010111000010101 0
+force -freeze sim:/MUL_Top/A 1011011000011110111111101110111 0
+force -freeze sim:/MUL_Top/B 111011101111101110101111111000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1527,8 +1533,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 111101110011000001000000110111 0
-force -freeze sim:/MUL_Top/B 1001000101011111111000000000011 0
+force -freeze sim:/MUL_Top/A 11100010001000000000010101100 0
+force -freeze sim:/MUL_Top/B 1010101111000100111110011000111 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1557,8 +1563,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 1110011010011011111101100001011 0
-force -freeze sim:/MUL_Top/B 10110000000100110010111110000101 0
+force -freeze sim:/MUL_Top/A 10010011100111001010111001100111 0
+force -freeze sim:/MUL_Top/B 1110001110100100111101011011101 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1587,8 +1593,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 10100000011110001010011001111111 0
-force -freeze sim:/MUL_Top/B 10101001100000101110110010 0
+force -freeze sim:/MUL_Top/A 1110010010011100000111111001011 0
+force -freeze sim:/MUL_Top/B 11111110011100010110011111001110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1617,8 +1623,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 110101110000100011001111000011 0
-force -freeze sim:/MUL_Top/B 100100101110110101110010101100 0
+force -freeze sim:/MUL_Top/A 1100110001100011100110101000000 0
+force -freeze sim:/MUL_Top/B 10110000010011010001000111010000 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0
@@ -1647,8 +1653,8 @@ run
 run
 run
 run
-force -freeze sim:/MUL_Top/A 101111110110100101101100110011 0
-force -freeze sim:/MUL_Top/B 11110001111100011000100000000111 0
+force -freeze sim:/MUL_Top/A 10100111111011010111111010100 0
+force -freeze sim:/MUL_Top/B 11010000011100111101110001101110 0
 force -freeze sim:/MUL_Top/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/MUL_Top/rst 1 0
 force -freeze sim:/MUL_Top/Enable 0 0

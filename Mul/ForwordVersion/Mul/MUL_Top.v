@@ -62,8 +62,12 @@ wire [NumBits*2-1:0] Core1_I_Final_Adder_O_ValidMux;
 wire [NumBits*2-1:0] Core2_I_Final_Adder_O_ValidMux;
 
 
+//================Counter ==========
+localparam  CounterNumBits =$clog2(NumPartialProducts) ;
 
-
+wire [CounterNumBits-1:0] CounterReg;
+  
+wire [OutNumBits-1:0] in_Result ;
 
 // Instances
 
@@ -90,7 +94,8 @@ CTRL_UNIT_MUL#(
     .O_Core1_E2        (Core1_I_mux_No0_O_CTRL_UNIT_MUL_E2        ),
     .O_Core2_E0        (Core2_I_mux_Neg_O_CTRL_UNIT_MUL_E0        ),
     .O_Core2_E1        (Core2_I_mux_2A_O_CTRL_UNIT_MUL_E1        ),
-    .O_Core2_E2        (Core2_I_mux_No0_O_CTRL_UNIT_MUL_E2        )
+    .O_Core2_E2        (Core2_I_mux_No0_O_CTRL_UNIT_MUL_E2        ),
+    .CounterReg         (CounterReg)
 );
 
 
@@ -110,6 +115,9 @@ Mod_Booth_Enc #(
 
 
 /// ======================  Core 1================================= 
+
+
+
 
 //2A/A
 left_Shifter #(
@@ -162,18 +170,40 @@ N_bit_MUX #(
 
 
 
+
+
+wire [OutNumBits-1:0] Core1_I_Adder_O_VarLShi_A ;
+wire [OutNumBits-1:0] Core1_I_Adder_FeedBack_A ;
+
+
+VariableLeftShifter #(
+    .NumBits(OutNumBits),
+    .CounterNumBits(CounterNumBits) 
+)
+ u_VariableLeftShifter(
+    .clk        (clk        ),
+    .rst        (rst        ),
+    .Enable     (Enable     ),
+    .I_SoftRst  (Softrst  ),
+    .I_Data     (Core1_I_Adder_O_Mux_Zero_A     ),
+    .CounterReg (CounterReg ),
+    .O_Data     (Core1_I_Adder_O_VarLShi_A     )
+);
+
+
+
 Adder #(
 .In1_NumBits(OutNumBits),
 .In2_NumBits(OutNumBits),
 .Out_NumBits(OutNumBits)
 )u_core_1_Adder(
-    .I_IN1     (Core1_I_Adder_O_Mux_Zero_A     ),
-    .I_IN2     (Core1_I_Adder_O_RightShfter     ),
+    .I_IN1     (Core1_I_Adder_O_VarLShi_A     ),
+    .I_IN2     (Core1_I_Adder_FeedBack_A     ),
     .clk       (clk       ),
     .rst       (rst       ),
     .I_SoftRst (Softrst ),
     .Enable    (Enable    ),
-    .O_AdderOut (Core1_I_RightShfter_O_Acc  )
+    .O_AdderOut (Core1_I_Adder_FeedBack_A  )
 );
 
 
@@ -256,19 +286,36 @@ N_bit_MUX #(
 );
 
 
+wire [OutNumBits-1:0] Core2_I_Adder_O_VarLShi_A ;
+wire [OutNumBits-1:0] Core2_I_Adder_FeedBack_A ;
+
+VariableLeftShifter #(
+    .NumBits(OutNumBits),
+    .CounterNumBits(CounterNumBits) 
+)
+ u2_VariableLeftShifter(
+    .clk        (clk        ),
+    .rst        (rst        ),
+    .Enable     (Enable     ),
+    .I_SoftRst  (Softrst  ),
+    .I_Data     (Core2_I_Adder_O_Mux_Zero_A     ),
+    .CounterReg (CounterReg ),
+    .O_Data     (Core2_I_Adder_O_VarLShi_A     )
+);
+
 
 Adder #(
     .In1_NumBits(OutNumBits),
     .In2_NumBits(OutNumBits),
     .Out_NumBits(OutNumBits)
     )u_core_2__Adder(
-    .I_IN1     (Core2_I_Adder_O_Mux_Zero_A     ),
-    .I_IN2     (Core2_I_Adder_O_RightShfter     ),
+    .I_IN1     (Core2_I_Adder_O_VarLShi_A     ),
+    .I_IN2     (Core2_I_Adder_FeedBack_A     ),
     .clk       (clk       ),
     .rst       (rst       ),
     .I_SoftRst (Softrst ),
     .Enable    (Enable    ),
-    .O_AdderOut  (Core2_I_RightShfter_O_Acc  )
+    .O_AdderOut  (Core2_I_Adder_FeedBack_A  )
 );
 
 
@@ -301,7 +348,7 @@ Var_Shift_Reg #(
 N_bit_MUX #(
     .InWidth('d64)
 )u_Validation_IN1_MUX(
-    .IN_True  ({Core1_I_RightShfter_O_Acc[OutNumBits-NumPartialProducts-1:0],Core1_I_Final_Adder_O_VarRightShfter}  ),
+    .IN_True  (Core1_I_Adder_FeedBack_A  ),
     .IN_False (64'b0 ),
     .sel      (Valid      ),
     .Out      (Core1_I_Final_Adder_O_ValidMux      )
@@ -312,36 +359,61 @@ N_bit_MUX #(
 N_bit_MUX #(
     .InWidth('d64)
 )u_Validation_IN2_MUX(
-    .IN_True  ({Core2_I_RightShfter_O_Acc[NumBits-1:0],Core2_I_Final_Adder_O_VarRightShfter,16'b0}  ),
+    .IN_True  ({Core2_I_Adder_FeedBack_A[OutNumBits-1-16:0],16'b0} ),
     .IN_False (64'b0 ),
     .sel      (Valid      ),
     .Out      (Core2_I_Final_Adder_O_ValidMux      )
 );
 
-Adder #(
+//============== Bias =========
+// For MSB of A Because it isn't Done by ModEncoder 
+wire [OutNumBits-1:0] Bias;
+N_bit_MUX #(
+    .InWidth('d64)
+)u_Bias_MUX(
+    .IN_True  ({A,32'b0} ),
+    .IN_False (64'b0 ),
+    .sel      (B[NumBits-1]      ),
+    .Out      (Bias      )
+);
+
+
+AdderPlusBias #(
     .In1_NumBits(2*NumBits),
     .In2_NumBits(2*NumBits),
     .Out_NumBits(2*NumBits)
 ) u_Final_Adder(
     .I_IN1      (Core1_I_Final_Adder_O_ValidMux      ),
-    .I_IN2      ( Core2_I_Final_Adder_O_ValidMux    ),
+    .I_IN2      (Core2_I_Final_Adder_O_ValidMux    ),
     .clk        (clk        ),
     .rst        (rst        ),
+    .Bias       (Bias       ),
     .I_SoftRst  (I_SoftRst  ),
     .Enable     (Enable     ),
-    .O_AdderOut (Result )
+    .O_AdderOut (in_Result )
 );
+
 
 
 Delay#(
     .NumDelayCycle(1'd1)
 ) u_Delay(
-    .in  (Valid & |(Core1_I_Final_Adder_O_VarRightShfter) ), //~|() For Supress 1st Cycle
+    .in  (Valid & |(Core1_I_Final_Adder_O_ValidMux) ), //~|() For Supress 1st Cycle
     .clk (clk ),
     .rst (rst ),
     .out (MulValid )
 );
 
+
+
+N_bit_MUX #(
+    .InWidth('d64)
+)u_Validation_Result_MUX(
+    .IN_True  (in_Result ),
+    .IN_False (64'b0 ),
+    .sel      (MulValid      ),
+    .Out      (Result      )
+);
 
 
 
