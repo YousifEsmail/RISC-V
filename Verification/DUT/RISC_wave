@@ -1,0 +1,345 @@
+onerror {resume}
+quietly WaveActivateNextPane {} 0
+add wave -noupdate -divider FETCH
+add wave -noupdate -color {Medium Blue} -height 25 -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/o_Instr_F
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/rst
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/clk
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/i_Stall_F
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/PCSrc_F
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/i_PC_Target_F
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/o_PCPluse4_F
+add wave -noupdate -group FETCH -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/o_Instr_F
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/o_PC_F
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/i_INSTMEM_iPCINC4_o_PCREG_PC_F
+add wave -noupdate -group FETCH /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/i_PCREG_o_PCMUX_PC_F
+add wave -noupdate -group PC_MUX /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_Mux_PC/sel
+add wave -noupdate -group PC_MUX /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_Mux_PC/IN_1
+add wave -noupdate -group PC_MUX /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_Mux_PC/IN_2
+add wave -noupdate -group PC_MUX /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_Mux_PC/Out
+add wave -noupdate -group PC_INC /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_PC_INC_4/i_PC_F
+add wave -noupdate -group PC_INC /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_PC_INC_4/o_PCPluse4_F
+add wave -noupdate -group PC_REG /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_PC_REG/clk
+add wave -noupdate -group PC_REG /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_PC_REG/rst
+add wave -noupdate -group PC_REG /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_PC_REG/EN
+add wave -noupdate -group PC_REG /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_PC_REG/i_PC_muxed_F
+add wave -noupdate -group PC_REG /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_PC_REG/o_PC_F
+add wave -noupdate -group INST_MEM /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/rst
+add wave -noupdate -group INST_MEM /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/i_Address_IN
+add wave -noupdate -group INST_MEM /RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/o_Instr_F
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[32]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[31]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[30]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[29]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[28]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[27]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[26]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[25]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[24]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[23]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[22]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[21]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[20]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[19]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[18]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[17]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[16]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[15]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[14]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[13]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[12]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[11]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[10]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[9]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[8]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[7]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[6]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[5]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[4]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[3]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[2]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[1]}
+add wave -noupdate -group INST_MEM0:32 {/RISC_V_TB/u_RISCV_TOP/u_FETCH_STAGE/u_INST_MEM/INST_Memory[0]}
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/clk
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/rst
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/CLR
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/EN
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/i_Instr_F
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/i_PC_F
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/i_PCPluse4_F
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/o_PC_D
+add wave -noupdate -expand -group IF_ID /RISC_V_TB/u_RISCV_TOP/u_IF_ID_PR/o_PCPluse4_D
+add wave -noupdate -divider DECODE
+add wave -noupdate -color Red -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/i_Instr_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/clk
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/rst
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/i_PC_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/i_PCPluse4_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/i_RegWrite_W
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/i_WD3_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/i_A3_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_RD1_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_RD2_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_PC_D
+add wave -noupdate -expand -group DECODE -radix decimal /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_RS1_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_RS2_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_Rd_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_ImmEXT_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_PCPluse4_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_RegWrite_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_ResultSec_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_MemWrite_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_Jump_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_Branch_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_ALUSrc_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_immSrc_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_ALU_Control_D
+add wave -noupdate -expand -group DECODE /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/o_Funct3_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/i_OP_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/i_FUNCT3_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/i_FUNCT7_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_RegWrite_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_ResultSec_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_MemWrite_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_Jump_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_Branch_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_ALUSrc_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_immSrc_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/o_ALU_Control_D
+add wave -noupdate -expand -group CTRL_UNIT /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_CTRL_UNIT/ALUOP
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/Address_Width
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/Data_Width
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/Reg_file_Depth
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/clk
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/rst
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/WE3
+add wave -noupdate -group REG_File -color Red /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/i_A1
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/i_A2
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/i_A3
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/i_WD3
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/o_RD1
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/o_RD2
+add wave -noupdate -group REG_File /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/i
+add wave -noupdate -group REG_File -childformat {{{/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[5]} -radix decimal} {{/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[4]} -radix decimal} {{/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[3]} -radix decimal} {{/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[2]} -radix decimal} {{/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[1]} -radix decimal} {{/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[0]} -radix decimal}} -subitemconfig {{/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[5]} {-height 15 -radix decimal} {/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[4]} {-height 15 -radix decimal} {/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[3]} {-height 15 -radix decimal} {/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[2]} {-height 15 -radix decimal} {/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[1]} {-height 15 -radix decimal} {/RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE[0]} {-height 15 -radix decimal}} /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Reg_file/REGFILE
+add wave -noupdate -group IMM_GEN -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Imm_gen/i_INST_D
+add wave -noupdate -group IMM_GEN /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Imm_gen/i_Inst_Type
+add wave -noupdate -group IMM_GEN -radix decimal /RISC_V_TB/u_RISCV_TOP/u_DECODE_STAGE/u_Imm_gen/o_ImmEXT_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/clk
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/rst
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/CLR
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_RD1_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_RD2_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_PC_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_RS1_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_RS2_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_Rd_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_immExt_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_PCPluse4_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_Funct3_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_RegWrite_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_ResultSec_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_MemWrite_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_Jump_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_Branch_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_ALUSrc_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_immSrc_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/i_ALU_Control_D
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_RegWrite_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_ResultSec_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_MemWrite_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_Jump_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_Branch_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_ALUSrc_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_immSrc_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_ALU_Control_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_RD1_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_RD2_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_PC_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_RS1_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_RS2_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_Rd_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_immExt_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_PCPluse4_E
+add wave -noupdate -group ID_IE /RISC_V_TB/u_RISCV_TOP/u_ID_IE_PR/o_Funct3_E
+add wave -noupdate -divider EXCUTE
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_RegWrite_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_ResultSec_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_MemWrite_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Jump_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Branch_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_ALUSrc_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_immSrc_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_ALU_Control_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_RD1_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_RD2_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_PC_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_RS1_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_RS2_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Rd_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_immExt_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_PCPluse4_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_MUX_4_SRC_A_ForwardA_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_MUX_4_SRC_A_ForwardB_E
+add wave -noupdate -expand -group EXCUTE -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_ALU_Res_M
+add wave -noupdate -expand -group EXCUTE -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Res_W
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Funct3_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_PC_target_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_ALU_Res_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_WriteData_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_RegWrite_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_ResultSec_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_MemWrite_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_RS1_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_RS2_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_Rd_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_PCPluse4_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_PCSrc_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_ALU_O_MUX_4_SRC_A_SrcA_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Mux_SRC_B_EO_MUX_4_SRC_B_SrcB_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_ALU_O_MUX_2_SRC_B_SrcB_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Branch_circuit_o_ALU_carry_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Branch_circuit_o_ALU_sign_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/i_Branch_circuit_o_ALU_zero_E
+add wave -noupdate -expand -group EXCUTE /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/o_Branch_circt_o_Branch_E
+add wave -noupdate -expand -group ALU -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/i_SrcA_E
+add wave -noupdate -expand -group ALU -radix binary /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/i_SrcB_E
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/i_ALU_CTRL_E
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/carry
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/o_zero
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/o_sign
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/o_overflow
+add wave -noupdate -expand -group ALU -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/o_ALU_Res_E
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/SUBTRACTION
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/U_SUBTRACTION
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/U_A
+add wave -noupdate -expand -group ALU /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_ALU/U_B
+add wave -noupdate -group BRANCH /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Branch_circuit/i_LTU
+add wave -noupdate -group BRANCH /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Branch_circuit/i_zero_E
+add wave -noupdate -group BRANCH /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Branch_circuit/i_sign_E
+add wave -noupdate -group BRANCH /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Branch_circuit/i_carry_E
+add wave -noupdate -group BRANCH /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Branch_circuit/i_Funct3_E
+add wave -noupdate -group BRANCH /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Branch_circuit/o_Branch_E
+add wave -noupdate -group PC_TARGET_ADDER /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_PC_target_adder/i_PC_E
+add wave -noupdate -group PC_TARGET_ADDER /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_PC_target_adder/i_immExt_E
+add wave -noupdate -group PC_TARGET_ADDER /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_PC_target_adder/i_RS1_E
+add wave -noupdate -group PC_TARGET_ADDER /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_PC_target_adder/i_Jal_R_E
+add wave -noupdate -group PC_TARGET_ADDER /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_PC_target_adder/o_PC_target_E
+add wave -noupdate -group PC_TARGET_ADDER /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_PC_target_adder/JaLR_OP
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_Funct3_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_Funct3_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/RD_Data_Width
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/PC_Width
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/Address_Width
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/clk
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/rst
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/CLR
+add wave -noupdate -expand -group IE_IM -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_ALU_Res_E
+add wave -noupdate -expand -group IE_IM -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_WriteData_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_Rd_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_PCPluse4_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_PC_target_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_RegWrite_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_ResultSec_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_MemWrite_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/i_Funct3_E
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_RegWrite_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_ResultSec_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_MemWrite_M
+add wave -noupdate -expand -group IE_IM -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_ALU_Res_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_WriteData_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_Rd_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_PCPluse4_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_Funct3_M
+add wave -noupdate -expand -group IE_IM /RISC_V_TB/u_RISCV_TOP/u_IE_IM_PR/o_PC_target_M
+add wave -noupdate -group MUX4_SRCA /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_A/sel
+add wave -noupdate -group MUX4_SRCA /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_A/IN_1
+add wave -noupdate -group MUX4_SRCA /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_A/IN_2
+add wave -noupdate -group MUX4_SRCA /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_A/IN_3
+add wave -noupdate -group MUX4_SRCA /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_A/IN_4
+add wave -noupdate -group MUX4_SRCA /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_A/Out
+add wave -noupdate -group MUX4_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_B/sel
+add wave -noupdate -group MUX4_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_B/IN_1
+add wave -noupdate -group MUX4_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_B/IN_2
+add wave -noupdate -group MUX4_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_B/IN_3
+add wave -noupdate -group MUX4_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_B/IN_4
+add wave -noupdate -group MUX4_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_MUX_4_SRC_B/Out
+add wave -noupdate -group MUX2_SRC_A /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_A_E/sel
+add wave -noupdate -group MUX2_SRC_A /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_A_E/IN_1
+add wave -noupdate -group MUX2_SRC_A /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_A_E/IN_2
+add wave -noupdate -group MUX2_SRC_A /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_A_E/Out
+add wave -noupdate -group MUX2_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_B_E/sel
+add wave -noupdate -group MUX2_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_B_E/IN_1
+add wave -noupdate -group MUX2_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_B_E/IN_2
+add wave -noupdate -group MUX2_SRCB /RISC_V_TB/u_RISCV_TOP/u_EXCUTE_STAGE/u_Mux_SRC_B_E/Out
+add wave -noupdate -divider MEM
+add wave -noupdate -group Data_Mem /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/clk
+add wave -noupdate -group Data_Mem /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/rst
+add wave -noupdate -group Data_Mem /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/WE
+add wave -noupdate -group Data_Mem -radix decimal /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_A
+add wave -noupdate -group Data_Mem -radix hexadecimal -childformat {{{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[31]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[30]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[29]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[28]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[27]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[26]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[25]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[24]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[23]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[22]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[21]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[20]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[19]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[18]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[17]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[16]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[15]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[14]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[13]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[12]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[11]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[10]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[9]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[8]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[7]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[6]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[5]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[4]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[3]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[2]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[1]} -radix hexadecimal} {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[0]} -radix hexadecimal}} -subitemconfig {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[31]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[30]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[29]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[28]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[27]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[26]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[25]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[24]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[23]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[22]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[21]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[20]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[19]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[18]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[17]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[16]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[15]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[14]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[13]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[12]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[11]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[10]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[9]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[8]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[7]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[6]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[5]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[4]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[3]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[2]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[1]} {-height 15 -radix hexadecimal} {/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD[0]} {-height 15 -radix hexadecimal}} /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_WD
+add wave -noupdate -group Data_Mem /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i_Funct3_M
+add wave -noupdate -group Data_Mem /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/o_RD
+add wave -noupdate -group Data_Mem /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/i
+add wave -noupdate -group Data_Mem -childformat {{{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/DataMEM[17]} -radix hexadecimal}} -subitemconfig {{/RISC_V_TB/u_RISCV_TOP/u_Data_MEM/DataMEM[17]} {-height 15 -radix hexadecimal}} /RISC_V_TB/u_RISCV_TOP/u_Data_MEM/DataMEM
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/clk
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/rst
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/CLR
+add wave -noupdate -expand -group IM_IW -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/i_ALU_Res_M
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/i_ReadData_M
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/i_Rd_M
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/i_PCPluse4_M
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/i_RegWrite_M
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/i_ResultSec_M
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/o_RegWrite_W
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/o_ResultSec_W
+add wave -noupdate -expand -group IM_IW -radix hexadecimal /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/o_ALU_Res_W
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/o_ReadData_W
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/o_Rd_W
+add wave -noupdate -expand -group IM_IW /RISC_V_TB/u_RISCV_TOP/u_IM_IW_PR/o_PCPluse4_W
+add wave -noupdate -divider WB
+add wave -noupdate -expand -group MUX_4WB /RISC_V_TB/u_RISCV_TOP/u_MUX_4_WB/sel
+add wave -noupdate -expand -group MUX_4WB /RISC_V_TB/u_RISCV_TOP/u_MUX_4_WB/IN_1
+add wave -noupdate -expand -group MUX_4WB /RISC_V_TB/u_RISCV_TOP/u_MUX_4_WB/IN_2
+add wave -noupdate -expand -group MUX_4WB /RISC_V_TB/u_RISCV_TOP/u_MUX_4_WB/IN_3
+add wave -noupdate -expand -group MUX_4WB /RISC_V_TB/u_RISCV_TOP/u_MUX_4_WB/IN_4
+add wave -noupdate -expand -group MUX_4WB /RISC_V_TB/u_RISCV_TOP/u_MUX_4_WB/Out
+add wave -noupdate -divider HAZARD
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_RS1_D
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_RS2_D
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_RS1_E
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_RS2_E
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_Rd_E
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_ResultSec_E
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_PCSrcE
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_Rd_M
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_RegWrite_M
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_Rd_W
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/i_RegWrite_W
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/o_Stall_F
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/o_Stall_D
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/o_Flush_D
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/o_Flush_E
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/o_ForwardA_E
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/o_ForwardB_E
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/Forward_Cond_M_A
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/Forward_Cond_W_A
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/Forward_Cond_M_B
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/Forward_Cond_W_B
+add wave -noupdate -group HAZARD /RISC_V_TB/u_RISCV_TOP/u_Hazard_Unit/lw_Stall
+TreeUpdate [SetDefaultTree]
+WaveRestoreCursors {{Cursor 1} {1192265 ps} 0}
+quietly wave cursor active 1
+configure wave -namecolwidth 232
+configure wave -valuecolwidth 223
+configure wave -justifyvalue left
+configure wave -signalnamewidth 1
+configure wave -snapdistance 10
+configure wave -datasetprefix 0
+configure wave -rowmargin 4
+configure wave -childrowmargin 2
+configure wave -gridoffset 0
+configure wave -gridperiod 1
+configure wave -griddelta 40
+configure wave -timeline 0
+configure wave -timelineunits ps
+update
+WaveRestoreZoom {1087299 ps} {1289907 ps}
