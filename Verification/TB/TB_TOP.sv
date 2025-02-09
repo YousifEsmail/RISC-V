@@ -27,4 +27,12 @@ RISCV_TOP u_RISCV_TOP(
 );
 
 
+
+
+  initial begin 
+    //Passing innterface to the Virtual interface via config_db
+    uvm_config_db #(virtual intf)::set(null,"*","risc_intf",risc_intf);
+    run_test();
+  end
+
 endmodule
