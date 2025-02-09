@@ -12,7 +12,8 @@ module RISCV_TOP #(
 
 ) (
     input       wire        rst,
-    input       wire        clk
+    input       wire        clk,
+    input       wire [Inst_Data_width-1:0] Instr_F_in
 );
  // internals 
  // Nameing conv. 
@@ -165,13 +166,13 @@ u_IF_ID_PR(
     .i_Instr_F    (i_IF_ID_PR_o_FETCH_Instr_F    ),
     .i_PC_F       (i_IF_ID_PR_o_FETCH_PC_F       ),
     .i_PCPluse4_F (i_IF_ID_PR_o_FETCH_PCPluse4_F ),
-    .o_Instr_D    (i_DECODE_o_IF_ID_PR_Instr_D    ),
+    .o_Instr_D    (    ),// ByPassed To be Driven  From UVM_Driver 
     .o_PC_D       (i_DECODE_o_IF_ID_PR_PC_D       ),
     .o_PCPluse4_D (i_DECODE_o_IF_ID_PR_PCPluse4_D )
 );
 
-
-
+// Drive the Instraction From UVM Driver
+assign i_DECODE_o_IF_ID_PR_Instr_D= Instr_F_in;
 //========================= Decode ===========================
 DECODE_STAGE #(
     .Inst_Data_width (Inst_Data_width ),
