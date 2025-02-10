@@ -34,10 +34,11 @@ class env extends uvm_env;
           super.connect_phase(phase); 
           //Connect Monoitor Analysis Ports (Scoreboard,Coverage)
           //Scoreboard
-          //       
+          risc_agent.risc_monitor.monitor_ap.connect(risc_scoreboard.sb_mon_port)       
           //Connect Monoitor Analysis Ports (Scoreboard,Coverage)
           // Coverage
-          //        
+          risc_agent.risc_monitor.monitor_ap.connect(risc_coverage.cov_mon_port) ;      
+       
       endfunction :connect_phase
     
     

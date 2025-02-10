@@ -30,6 +30,7 @@ class agent extends uvm_agent ;
       function void connect_phase (uvm_phase phase);
         super.connect_phase(phase);	  
     	// Connect driver to sequencer
+      risc_driver.seq_item_port.connect(risc_sequencer.seq_item_export);
       endfunction :connect_phase
     
 

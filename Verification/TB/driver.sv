@@ -3,6 +3,7 @@ class driver extends uvm_driver #(seq_item);
 
 
   virtual RISC_intf driver_intf ;
+  seq_item driver_item ;
 
   
   
@@ -44,9 +45,9 @@ class driver extends uvm_driver #(seq_item);
  // drive task 
       task drive (seq_item RISC_item) ;
         @(posedge driver_intf.clk) ;
-		 driver_intf.rst  <= RISC_item.reset  ;
-	     driver_intf.INST <= RISC_item.InstrF ;
-         driver_intf.check_end_ofseq <=RISC_item.check_end_ofseq;
+		    driver_intf.rst  <= RISC_item.reset  ;
+	      driver_intf.INST <= RISC_item.InstrF ;
+        driver_intf.check_end_ofseq <=RISC_item.check_end_ofseq;
       endtask : drive
      
 
